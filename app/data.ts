@@ -33,28 +33,28 @@ export const PROJECTS: Project[] = [
     description:
       'Engineering for Answer Optimization.',
     link: 'blank',
-    image: '/Projects/ShipV3.png',
+    image: 'Public/Projects/ShipV3.png',
     id: 'project1',
   },
   {
     name: 'Project 2',
     description: 'Placeholder description for project 2.',
     link: 'blank',
-    image: '/Projects/blank.png',
+    image: 'Public/Projects/blank.png',
     id: 'project2',
   },
   {
     name: 'Project 3',
     description: 'Placeholder description for project 3.',
     link: 'blank',
-    image: '/Projects/blank.png',
+    image: 'Public/Projects/blank.png',
     id: 'project3',
   },
   {
     name: 'Project 4',
     description: 'Placeholder description for project 4.',
     link: 'blank',
-    image: '/Projects/blank.png',
+    image: 'Public/Projects/blank.png',
     id: 'project4',
   },
 ]

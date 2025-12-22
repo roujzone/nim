@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
     description:
       'Engineering for Answer Optimization.',
     link: 'blank',
-    image: '/Projects/SHIPV3.png',
+    image: '/Projects/ShipV3.png',
     id: 'project1',
   },
   {

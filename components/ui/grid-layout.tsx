@@ -8,19 +8,6 @@ export function GridContainer({ children }: { children: React.ReactNode }) {
       {/* Right vertical line - extends to top of viewport */}
       <div className="pointer-events-none absolute -top-12 right-0 bottom-0 w-px bg-[#e5e5e5] md:-top-20 dark:bg-[#404040]" />
 
-      {/* Dither background for hero section - extends to first section divider */}
-      <div
-        className="pointer-events-none absolute -top-12 right-0 left-0 h-[350px] overflow-hidden opacity-60 md:-top-20 md:h-[400px]"
-        style={{ zIndex: 0 }}
-      >
-        <img
-          src="/Dithering@2x.webp"
-          alt=""
-          aria-hidden="true"
-          className="h-full w-full object-cover"
-        />
-      </div>
-
       {/* Content */}
       <div className="relative z-10">{children}</div>
     </div>

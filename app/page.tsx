@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/morphing-dialog'
 import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
+import { SectionDivider } from '@/components/ui/grid-layout'
 import {
   PROJECTS,
   WORK_EXPERIENCE,
@@ -43,7 +44,38 @@ type ProjectImageProps = {
   src: string
 }
 
+function GridPlaceholder() {
+  return (
+    <svg
+      className="w-full h-auto aspect-[4/3]"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Background */}
+      <rect width="400" height="300" className="fill-white dark:fill-zinc-950" />
+      {/* Grid pattern */}
+      <defs>
+        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path
+            d="M 20 0 L 0 0 0 20"
+            fill="none"
+            className="stroke-[#e0e0e0] dark:stroke-[#2a2a2a]"
+            strokeWidth="0.5"
+          />
+        </pattern>
+      </defs>
+      <rect width="400" height="300" fill="url(#grid)" />
+    </svg>
+  )
+}
+
 function ProjectImage({ src }: ProjectImageProps) {
+  const isPlaceholder = src.includes('blank.png')
+
+  if (isPlaceholder) {
+    return <GridPlaceholder />
+  }
+
   return (
     <MorphingDialog
       transition={{
@@ -56,19 +88,20 @@ function ProjectImage({ src }: ProjectImageProps) {
         <img
           src={src}
           alt="Project"
-          className="aspect-video w-full cursor-zoom-in rounded-xl object-cover"
+          className="w-full aspect-[4/3] cursor-zoom-in object-cover"
+          loading="lazy"
         />
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
+        <MorphingDialogContent className="relative bg-zinc-50 p-1 dark:bg-zinc-950">
           <img
             src={src}
             alt="Project"
-            className="aspect-video h-[50vh] w-full rounded-xl object-cover md:h-[70vh]"
+            className="max-h-[50vh] w-full object-contain md:max-h-[70vh]"
           />
         </MorphingDialogContent>
         <MorphingDialogClose
-          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+          className="fixed top-6 right-6 h-fit w-fit bg-white p-1 dark:bg-zinc-900"
           variants={{
             initial: { opacity: 0 },
             animate: {
@@ -96,7 +129,7 @@ function MagneticSocialLink({
     <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
       <a
         href={link}
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+        className="group relative inline-flex shrink-0 items-center gap-[1px] bg-zinc-50 px-2.5 py-1 text-sm font-medium text-[#6B76E5] transition-colors duration-200 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-[#6B76E5] dark:hover:bg-zinc-700"
       >
         {children}
         <svg
@@ -122,34 +155,43 @@ function MagneticSocialLink({
 export default function Personal() {
   return (
     <motion.main
-      className="space-y-24"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
     >
+      {/* Hero/Bio Section */}
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
+        className="py-8"
       >
-        <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Designer that dabbles in brand, web, and visual.
-          </p>
-        </div>
+        <p className="pl-4 text-zinc-600 dark:text-zinc-400">
+          Designer that mostly dabbles in brand, web, and visuals for start-ups.
+        </p>
       </motion.section>
 
+      <SectionDivider />
+
+      {/* Selected Projects Section */}
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <div key={project.name} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+        <h3 className="pl-4 mb-5 text-lg font-medium">Selected Projects</h3>
+        <div className="grid grid-cols-1 gap-0 sm:grid-cols-2">
+          {PROJECTS.map((project, index) => (
+            <div
+              key={project.name}
+              className={`group ${
+                index % 2 === 1 ? 'sm:-ml-[1px]' : ''
+              } ${
+                index >= 2 ? '-mt-[1px]' : ''
+              }`}
+            >
+              <div className="relative transition-all duration-300 ease-out hover:opacity-80 border border-[#e5e5e5] dark:border-[#404040]">
                 <ProjectImage src={project.image} />
               </div>
-              <div className="px-1">
+              <div className="p-4">
                 <a
                   className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
                   href={project.link}
@@ -167,15 +209,21 @@ export default function Personal() {
         </div>
       </motion.section>
 
+      <SectionDivider />
+
+      {/* Work Experience Section */}
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
+        className="w-full"
       >
-        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
-        <div className="flex flex-col space-y-2">
-          {WORK_EXPERIENCE.map((job) => (
+        <h3 className="pl-4 mb-5 text-lg font-medium">Work Experience</h3>
+        <div className="flex flex-col w-full">
+          {WORK_EXPERIENCE.map((job, index) => (
             <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+              className={`relative overflow-hidden bg-zinc-300/30 dark:bg-zinc-600/30 p-[1px] w-full ${
+                index > 0 ? '-mt-[1px]' : ''
+              }`}
               href={job.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -185,7 +233,7 @@ export default function Personal() {
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+              <div className="relative h-full w-full bg-white p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
@@ -205,15 +253,18 @@ export default function Personal() {
         </div>
       </motion.section>
 
+      <SectionDivider />
+
+      {/* Blog Section */}
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-3 text-lg font-medium">Blog</h3>
-        <div className="flex flex-col space-y-0">
+        <h3 className="pl-4 mb-3 text-lg font-medium">Blog</h3>
+        <div className="flex flex-col mx-[1px]">
           <AnimatedBackground
             enableHover
-            className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
+            className="h-full w-full bg-zinc-100 dark:bg-zinc-900/80"
             transition={{
               type: 'spring',
               bounce: 0,
@@ -223,7 +274,7 @@ export default function Personal() {
             {BLOG_POSTS.map((post) => (
               <Link
                 key={post.uid}
-                className="-mx-3 rounded-xl px-3 py-3"
+                className="px-4 py-3"
                 href={post.link}
                 data-id={post.uid}
               >
@@ -241,18 +292,22 @@ export default function Personal() {
         </div>
       </motion.section>
 
+      <SectionDivider />
+
+      {/* Connect Section */}
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
+        className="py-8"
       >
-        <h3 className="mb-5 text-lg font-medium">Connect</h3>
-        <p className="mb-5 text-zinc-600 dark:text-zinc-400">
+        <h3 className="pl-4 mb-5 text-lg font-medium">Connect</h3>
+        <p className="pl-4 mb-5 text-zinc-600 dark:text-zinc-400">
           Feel free to contact me at{' '}
           <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
             {EMAIL}
           </a>
         </p>
-        <div className="flex items-center justify-start space-x-3">
+        <div className="pl-4 flex items-center justify-start space-x-3">
           {SOCIAL_LINKS.map((link) => (
             <MagneticSocialLink key={link.label} link={link.link}>
               {link.label}

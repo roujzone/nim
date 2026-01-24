@@ -33,28 +33,28 @@ export const PROJECTS: Project[] = [
     description:
       'Engineering for Answer Optimization.',
     link: 'blank',
-    image: 'Public/Projects/ShipV3.png',
+    image: '/Projects/ShipV3.png',
     id: 'project1',
   },
   {
     name: 'Project 2',
     description: 'Placeholder description for project 2.',
     link: 'blank',
-    image: 'Public/Projects/blank.png',
+    image: '/Projects/blank.png',
     id: 'project2',
   },
   {
     name: 'Project 3',
     description: 'Placeholder description for project 3.',
     link: 'blank',
-    image: 'Public/Projects/blank.png',
+    image: '/Projects/blank.png',
     id: 'project3',
   },
   {
     name: 'Project 4',
     description: 'Placeholder description for project 4.',
     link: 'blank',
-    image: 'Public/Projects/blank.png',
+    image: '/Projects/blank.png',
     id: 'project4',
   },
 ]
@@ -88,8 +88,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Dipping my toes into some code',
-    description: 'My first baby steps trying to make something from little bits of code',
+    title: 'Design Engineering',
+    description: 'My first steps into design engineering as a designer',
     link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
     uid: 'blog-1',
   },

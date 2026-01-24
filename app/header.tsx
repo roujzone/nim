@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="mb-8 flex items-center justify-between">
+    <header className="mb-8 pl-4 flex items-center justify-between">
       <div>
-        <Link href="/" className="font-medium text-black dark:text-white">
+        <Link href="/" className="font-medium text-[#6B76E5]">
           Raj Solanki
         </Link>
         <TextEffect

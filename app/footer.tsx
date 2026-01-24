@@ -68,12 +68,12 @@ function ThemeSwitch() {
 
 export function Footer() {
   return (
-    <footer className="mt-16 pl-6 py-4">
+    <footer className="mt-16 py-4 pl-6">
       <div className="flex items-center justify-between">
         <a href="https://github.com/ibelick/nim" target="_blank">
           <TextLoop className="text-xs text-zinc-500">
             <span>2025 Raj.</span>
-            <span>Built with the help of Nim's template.</span>
+            <span>Built with the help of Nim&apos;s template.</span>
           </TextLoop>
         </a>
         <div className="text-xs text-zinc-400">

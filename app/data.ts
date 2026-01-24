@@ -30,8 +30,7 @@ type SocialLink = {
 export const PROJECTS: Project[] = [
   {
     name: 'Profound @ Vercel Ship 25',
-    description:
-      'Engineering for Answer Optimization.',
+    description: 'Engineering for Answer Optimization.',
     link: 'blank',
     image: '/Projects/ShipV3.png',
     id: 'project1',
@@ -95,8 +94,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     title: 'From finance to frames',
-    description:
-      'Why I left behind a career in finance to pursue design',
+    description: 'Why I left behind a career in finance to pursue design',
     link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
     uid: 'blog-2',
   },

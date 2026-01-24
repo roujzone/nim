@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="mb-8 pl-4 flex items-center justify-between">
+    <header className="mb-8 flex items-center justify-between pl-4">
       <div>
         <Link href="/" className="font-medium text-[#6B76E5]">
           Raj Solanki

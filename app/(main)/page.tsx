@@ -19,7 +19,7 @@ import {
   BLOG_POSTS,
   EMAIL,
   SOCIAL_LINKS,
-} from './data'
+} from '../data'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -63,7 +63,7 @@ function GridPlaceholder() {
           <path
             d="M 20 0 L 0 0 0 20"
             fill="none"
-            className="stroke-[#e0e0e0] dark:stroke-[#2a2a2a]"
+            className="stroke-[#f0f0f0] dark:stroke-[#202020]"
             strokeWidth="0.5"
           />
         </pattern>
@@ -190,7 +190,7 @@ export default function Personal() {
                 index >= 2 ? '-mt-[1px]' : ''
               }`}
             >
-              <div className="relative border border-[#e5e5e5] transition-all duration-300 ease-out hover:opacity-80 dark:border-[#404040]">
+              <div className="relative border border-[#f0f0f0] transition-all duration-300 ease-out hover:opacity-80 dark:border-[#282828]">
                 <ProjectImage src={project.image} />
               </div>
               <div className="p-4">

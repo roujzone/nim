@@ -130,7 +130,7 @@ export default function PersonPage({ body, ask, photos }: PersonPageProps) {
       <section className="flex flex-col items-center px-8 pt-8 pb-40">
         <div
           ref={textRef}
-          className="flex max-w-xl flex-col items-center text-center font-[family-name:var(--font-stk-bureau)] text-[22px] leading-[38px] font-light text-black"
+          className="flex max-w-xl flex-col items-start text-left font-[family-name:var(--font-stk-bureau)] text-[22px] leading-[38px] font-light text-black"
         >
           <motion.span
             initial={{ opacity: 0, y: 10 }}

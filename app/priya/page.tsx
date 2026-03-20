@@ -3,7 +3,7 @@ import PersonPage from '@/components/person-page'
 export default function PriyaPage() {
   return (
     <PersonPage
-      body={`Everyone knows you are that sister that can take care of anything. You are truly a role model and I hope I can handle things as easy as you do in life.\nThank you for always being an older sister to me.`}
+      body={`Priya,\nEveryone knows you are that sister that can take care of anything. You are truly a role model and I hope I can handle things as easy as you do in life.\nThank you for always being an older sister to me.`}
       ask="Will you be my groomswoman?"
       photos={[
         {

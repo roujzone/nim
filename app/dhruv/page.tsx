@@ -3,7 +3,7 @@ import PersonPage from '@/components/person-page'
 export default function DhruvPage() {
   return (
     <PersonPage
-      body={`You always look out for me, and willing to help at any moment. You have always led your own path in life and I respect and admire that so much.\nThank you for being a big brother to me.`}
+      body={`Dhruv,\nYou always look out for me, and willing to help at any moment. You have always led your own path in life and I respect and admire that so much.\nThank you for being a big brother to me.`}
       ask="Will you be my groomsman?"
       photos={[
         {

@@ -3,7 +3,7 @@ import PersonPage from '@/components/person-page'
 export default function ManuPage() {
   return (
     <PersonPage
-      body={`You are one of the realest– loyal and so hardworking. We have too many funny memories of our college days that I wouldn't ever trade.\nThank you for being a sister to me.`}
+      body={`Manu,\nYou are one of the realest– loyal and so hardworking. We have too many funny memories of our college days that I wouldn't ever trade.\nThank you for being a sister to me.`}
       ask="Will you be my groomswoman?"
       photos={[
         {

@@ -3,7 +3,7 @@ import PersonPage from '@/components/person-page'
 export default function AkashPage() {
   return (
     <PersonPage
-      body={`We have had too many laughs and vichaars over the years, and you always hold it down for me and everyone.\nThank you for being a big brother for more than half my life.`}
+      body={`Akash,\nWe have had too many laughs and vichaars over the years, and you always hold it down for me and everyone.\nThank you for being a big brother for more than half my life.`}
       ask="Will you be my groomsman?"
       photos={[
         {

@@ -3,7 +3,7 @@ import PersonPage from '@/components/person-page'
 export default function KunalPage() {
   return (
     <PersonPage
-      body={`Not once do you ever second guess stepping in to help any of your friends. I always hope to be as kind and giving as you in this life.\nThank you for being a big brother to me.`}
+      body={`Kunal,\nNot once do you ever second guess stepping in to help any of your friends. I always hope to be as kind and giving as you in this life.\nThank you for being a big brother to me.`}
       ask="Will you be my groomsman?"
       photos={[
         {

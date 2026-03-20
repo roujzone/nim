@@ -3,7 +3,7 @@ import PersonPage from '@/components/person-page'
 export default function NeilPage() {
   return (
     <PersonPage
-      body={`We have too many memories of being kids and doing reckless shit together, and I love every single one of those moments.\nThank you for being my brother through all the years together.`}
+      body={`Neil,\nWe have too many memories of being kids and doing reckless shit together, and I love every single one of those moments.\nThank you for being my brother through all the years together.`}
       ask="Will you be my groomsman?"
       photos={[
         {

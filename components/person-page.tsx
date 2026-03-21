@@ -28,6 +28,8 @@ const courier = Courier_Prime({
 export type Photo = {
   src: string
   caption: string
+  backgroundSize?: string
+  backgroundPosition?: string
 }
 
 export type PersonPageProps = {
@@ -99,16 +101,17 @@ export default function PersonPage({ body, ask, photos }: PersonPageProps) {
               boxShadow: '4px 10px 20px 4px rgba(0,0,0,0.15)',
             }}
           >
-            <img
-              src={photo.src}
-              alt={photo.caption}
+            <div
               style={{
                 position: 'absolute',
                 top: '15px',
                 left: '15px',
                 width: '240px',
                 height: '320px',
-                objectFit: 'cover',
+                backgroundImage: `url(${photo.src})`,
+                backgroundSize: photo.backgroundSize ?? 'cover',
+                backgroundPosition: photo.backgroundPosition ?? 'center',
+                backgroundRepeat: 'no-repeat',
               }}
             />
             <span

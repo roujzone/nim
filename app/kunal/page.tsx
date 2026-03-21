@@ -9,6 +9,8 @@ export default function KunalPage() {
         {
           src: 'https://workers.paper.design/file-assets/01KM4S7JDVX92VNVFZ82H4XPNG/01KM5SS4RR2WY3HK7VJH08BGGX.jpg',
           caption: 'orlando 2015',
+          backgroundSize: '219.919%',
+          backgroundPosition: '28.136% 37.037%',
         },
         {
           src: 'https://workers.paper.design/file-assets/01KM4S7JDVX92VNVFZ82H4XPNG/01KM4VE3Y4SV0M0M97VRWZZVMB.jpg',

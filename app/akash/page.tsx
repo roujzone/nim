@@ -19,10 +19,14 @@ export default function AkashPage() {
         {
           src: 'https://workers.paper.design/file-assets/01KM4S7JDVX92VNVFZ82H4XPNG/01KM5TW9XB8546PE1Z179MTMVB.jpg',
           caption: 'downtown 2016',
+          backgroundSize: '251.483%',
+          backgroundPosition: '70.35% 46.512%',
         },
         {
           src: 'https://workers.paper.design/file-assets/01KM4S7JDVX92VNVFZ82H4XPNG/01KM4V3FZKCN631WXDJ0W415T1.jpg',
           caption: 'sanford 2013',
+          backgroundSize: '114.898%',
+          backgroundPosition: '46.575% 42.593%',
         },
       ]}
     />

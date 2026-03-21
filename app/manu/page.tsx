@@ -1,4 +1,14 @@
+import type { Metadata } from 'next'
 import PersonPage from '@/components/person-page'
+
+export const metadata: Metadata = {
+  title: { absolute: 'Clothing' },
+  description: 'New arrivals — view the latest styles.',
+  openGraph: {
+    title: 'Clothing',
+    description: 'New arrivals — view the latest styles.',
+  },
+}
 
 export default function ManuPage() {
   return (

@@ -82,58 +82,58 @@ export default function PersonPage({ body, ask, photos }: PersonPageProps) {
               key={i}
               className={
                 i === 0
-                  ? 'relative z-10 -mb-8 translate-x-4 md:mb-0 md:translate-x-0 md:-mr-12'
+                  ? 'relative z-10 -mb-8 translate-x-4 md:-mr-12 md:mb-0 md:translate-x-0'
                   : 'relative z-0 -translate-x-4 md:translate-x-0 md:translate-y-10'
               }
             >
-          <motion.div
-            style={{
-              position: 'relative',
-              width: '270px',
-              height: '403px',
-              backgroundColor: '#EEEEEE',
-              rotate: i === 0 ? '-5.6deg' : '3.2deg',
-              boxShadow: '2px 5px 8px 2px rgba(0,0,0,0.12)',
-              cursor: 'pointer',
-            }}
-            initial={{ opacity: 0, y: 60 }}
-            animate={photosInView ? { opacity: 1, y: 0 } : {}}
-            transition={{
-              duration: 0.6,
-              ease: [0.22, 1, 0.36, 1],
-              delay: i * 0.15,
-            }}
-            whileHover={{
-              scale: 1.08,
-              rotate: i === 0 ? '-3deg' : '1.5deg',
-              boxShadow: '4px 10px 20px 4px rgba(0,0,0,0.15)',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: '15px',
-                left: '15px',
-                width: '240px',
-                height: '320px',
-                backgroundImage: `url(${photo.src})`,
-                backgroundSize: photo.backgroundSize ?? 'cover',
-                backgroundPosition: photo.backgroundPosition ?? 'center',
-                backgroundRepeat: 'no-repeat',
-              }}
-            />
-            <span
-              className="font-[family-name:var(--font-courier)] text-[12px] text-black"
-              style={{
-                position: 'absolute',
-                bottom: '18px',
-                right: '15px',
-                opacity: 0.76,
-              }}
-            >
-              {photo.caption}
-            </span>
-          </motion.div>
+              <motion.div
+                style={{
+                  position: 'relative',
+                  width: '270px',
+                  height: '403px',
+                  backgroundColor: '#EEEEEE',
+                  rotate: i === 0 ? '-5.6deg' : '3.2deg',
+                  boxShadow: '2px 5px 8px 2px rgba(0,0,0,0.12)',
+                  cursor: 'pointer',
+                }}
+                initial={{ opacity: 0, y: 60 }}
+                animate={photosInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: i * 0.15,
+                }}
+                whileHover={{
+                  scale: 1.08,
+                  rotate: i === 0 ? '-3deg' : '1.5deg',
+                  boxShadow: '4px 10px 20px 4px rgba(0,0,0,0.15)',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '15px',
+                    left: '15px',
+                    width: '240px',
+                    height: '320px',
+                    backgroundImage: `url(${photo.src})`,
+                    backgroundSize: photo.backgroundSize ?? 'cover',
+                    backgroundPosition: photo.backgroundPosition ?? 'center',
+                    backgroundRepeat: 'no-repeat',
+                  }}
+                />
+                <span
+                  className="font-[family-name:var(--font-courier)] text-[12px] text-black"
+                  style={{
+                    position: 'absolute',
+                    bottom: '18px',
+                    right: '15px',
+                    opacity: 0.76,
+                  }}
+                >
+                  {photo.caption}
+                </span>
+              </motion.div>
             </div>
           ))}
         </div>

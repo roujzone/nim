@@ -74,11 +74,19 @@ export default function PersonPage({ body, ask, photos }: PersonPageProps) {
       {/* Photos */}
       <section
         ref={photosRef}
-        className="flex flex-wrap justify-center gap-16 px-8 pt-8 pb-16"
+        className="flex justify-center px-8 pt-8 pb-16 md:pb-28"
       >
-        {photos.map((photo, i) => (
+        <div className="flex flex-col items-center md:flex-row md:items-start">
+          {photos.map((photo, i) => (
+            <div
+              key={i}
+              className={
+                i === 0
+                  ? 'relative z-10 -mb-8 translate-x-4 md:mb-0 md:translate-x-0 md:-mr-12'
+                  : 'relative z-0 -translate-x-4 md:translate-x-0 md:translate-y-10'
+              }
+            >
           <motion.div
-            key={i}
             style={{
               position: 'relative',
               width: '270px',
@@ -126,7 +134,9 @@ export default function PersonPage({ body, ask, photos }: PersonPageProps) {
               {photo.caption}
             </span>
           </motion.div>
-        ))}
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Message */}
